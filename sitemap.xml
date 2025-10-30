@@ -20,6 +20,15 @@
     <loc>http://localhost:1313/posts/javascript/9/</loc>
     <lastmod>2025-10-30T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/dom/</loc>
+    <lastmod>2025-10-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/javascript/6/</loc>
+    <lastmod>2025-10-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/event/</loc>
+    <lastmod>2025-10-30T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/function/</loc>
     <lastmod>2025-10-30T00:00:00+00:00</lastmod>
   </url><url>
@@ -30,6 +39,9 @@
     <lastmod>2025-10-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/javascript-series/</loc>
+    <lastmod>2025-10-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/l%E1%BA%ADp-tr%C3%ACnh-web/</loc>
     <lastmod>2025-10-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/object/</loc>
