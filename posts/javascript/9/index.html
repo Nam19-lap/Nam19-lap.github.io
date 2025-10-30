@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đối tượng (Object) và Mảng (Array) trong JavaScript | Nam.Dev</title>
+    <link rel="stylesheet" href="/css/custom.css">
+    <script defer src="/js/main.js"></script>
+  </head>
+  <body>
+    <header class="navbar">
+  <div class="container">
+    <a href="/" class="logo">Nam.Dev</a>
+    <nav>
+      <a href="/">Trang chủ</a>
+      <a href="/posts/">Bài viết</a>
+      <a href="/about/">Giới thiệu</a>
+      <button id="mode-toggle" class="mode-btn">☀️</button>
+    </nav>
+  </div>
+</header>
+
+    <main class="container">
+      
+<article class="post-content fade-up">
+  
+  <h1>Đối tượng (Object) và Mảng (Array) trong JavaScript</h1>
+  <p class="post-date">🗓️ 30/10/2025</p>
+
+  
+  
+
+  
+  <div class="post-body">
+    <h2 id="1-đối-tượng-object-trong-javascript">1. Đối tượng (Object) trong JavaScript</h2>
+<p>Đối tượng là tập hợp các cặp <strong>key–value</strong>, giúp lưu trữ dữ liệu có cấu trúc rõ ràng.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">person</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Nam&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">22</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">job</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Developer&#34;</span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">name</span>); <span style="color:#75715e">// Nam
+</span></span></span></code></pre></div><p>Ta có thể thêm, sửa hoặc xóa thuộc tính dễ dàng:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;nam@example.com&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">age</span>;
+</span></span></code></pre></div><h2 id="2-mảng-array">2. Mảng (Array)</h2>
+<p>Mảng là danh sách có thứ tự các phần tử.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fruits</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Táo&#34;</span>, <span style="color:#e6db74">&#34;Cam&#34;</span>, <span style="color:#e6db74">&#34;Chuối&#34;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">fruits</span>[<span style="color:#ae81ff">1</span>]); <span style="color:#75715e">// Cam
+</span></span></span></code></pre></div><p>Duyệt qua mảng:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fruit</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">fruits</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">fruit</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="3-kết-hợp-object-và-array">3. Kết hợp Object và Array</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">students</span> <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;An&#34;</span>, <span style="color:#a6e22e">score</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">8</span> },
+</span></span><span style="display:flex;"><span>  { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Bình&#34;</span>, <span style="color:#a6e22e">score</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">9</span> },
+</span></span><span style="display:flex;"><span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">students</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">s</span> =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">score</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>));
+</span></span></code></pre></div><h2 id="-tóm-tắt">🧩 Tóm tắt:</h2>
+<ul>
+<li>
+<p>Object giúp lưu dữ liệu có cấu trúc (key–value).</p>
+</li>
+<li>
+<p>Array lưu danh sách và dễ duyệt qua bằng vòng lặp.</p>
+</li>
+<li>
+<p>Kết hợp cả hai rất mạnh khi làm việc với dữ liệu thực tế.</p>
+</li>
+</ul>
+
+  </div>
+</article>
+
+    </main>
+    <footer class="footer">
+  <p>© 2025 Nam.Dev — Chia sẻ kiến thức lập trình 💻</p>
+  <p>
+    📧 <a href="mailto:nam.dev@example.com">Liên hệ</a> |
+    <a href="https://github.com/Nam19-lap" target="_blank">GitHub</a> |
+    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+  </p>
+</footer>
+
+  </body>
+</html>

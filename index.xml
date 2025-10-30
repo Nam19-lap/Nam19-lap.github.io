@@ -1,19 +1,70 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Blog của Nam</title>
     <link>http://localhost:1313/</link>
     <description>Recent content on Blog của Nam</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.150.1</generator>
     <language>vi</language>
-    <lastBuildDate>Sat, 04 Oct 2025 14:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 30 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello World</title>
-      <link>http://localhost:1313/posts/hello-world/</link>
-      <pubDate>Sat, 04 Oct 2025 14:00:00 +0700</pubDate>
-      <guid>http://localhost:1313/posts/hello-world/</guid>
-      <description>&lt;p&gt;Xin chào! Đây là bài viết đầu tiên trên blog Hugo của mình 🚀&lt;/p&gt;</description>
+      <title>Cấu trúc điều khiển trong JavaScript</title>
+      <link>http://localhost:1313/posts/javascript/7/</link>
+      <pubDate>Thu, 30 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/javascript/7/</guid>
+      <description>Tìm hiểu các cấu trúc điều khiển như if/else, switch, for, while trong JavaScript.</description>
+    </item>
+    <item>
+      <title>Đối tượng (Object) và Mảng (Array) trong JavaScript</title>
+      <link>http://localhost:1313/posts/javascript/9/</link>
+      <pubDate>Thu, 30 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/javascript/9/</guid>
+      <description>Tìm hiểu cách sử dụng Object và Array trong JavaScript — hai kiểu dữ liệu quan trọng để lưu trữ và xử lý thông tin.</description>
+    </item>
+    <item>
+      <title>Hàm trong JavaScript – Cách định nghĩa và sử dụng</title>
+      <link>http://localhost:1313/posts/javascript/8/</link>
+      <pubDate>Thu, 30 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/javascript/8/</guid>
+      <description>Giới thiệu khái niệm hàm trong JavaScript, các cách khai báo và sử dụng hàm hiệu quả.</description>
+    </item>
+    <item>
+      <title>Cấu trúc điều khiển trong Java</title>
+      <link>http://localhost:1313/posts/java/java-control-structures/</link>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/java/java-control-structures/</guid>
+      <description>Tìm hiểu các cấu trúc điều khiển trong Java: if/else, switch, vòng lặp for, while, và các câu lệnh break, continue.</description>
+    </item>
+    <item>
+      <title>Interface trong Java – Đa hình và Kế thừa đa cấp</title>
+      <link>http://localhost:1313/posts/java/interfaces/</link>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/java/interfaces/</guid>
+      <description>Tìm hiểu Interface trong Java – cách hoạt động, cách sử dụng để đạt được tính trừu tượng, đa hình và kế thừa đa cấp.</description>
+    </item>
+    <item>
+      <title>Xử lý ngoại lệ trong Java (Exception Handling)</title>
+      <link>http://localhost:1313/posts/java/5-exception-handling-java/</link>
+      <pubDate>Tue, 28 Oct 2025 15:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/posts/java/5-exception-handling-java/</guid>
+      <description>Hiểu và làm chủ cơ chế Exception Handling trong Java để viết chương trình an toàn và dễ bảo trì hơn.</description>
+    </item>
+    <item>
+      <title>Java OOP – Lớp (Class) và Đối tượng (Object)</title>
+      <link>http://localhost:1313/posts/java/java-oop-class-object/</link>
+      <pubDate>Tue, 28 Oct 2025 14:00:00 +0700</pubDate>
+      <guid>http://localhost:1313/posts/java/java-oop-class-object/</guid>
+      <description>Hiểu rõ Class và Object – hai khái niệm nền tảng trong lập trình hướng đối tượng (OOP) của Java.</description>
+    </item>
+    <item>
+      <title>Giới thiệu Java cơ bản</title>
+      <link>http://localhost:1313/posts/java/java-intro/</link>
+      <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/java/java-intro/</guid>
+      <description>&lt;p&gt;Giới thiệu về cú pháp cơ bản trong Java&lt;/p&gt;
+&lt;h2 id=&#34;1-tổng-quan&#34;&gt;1. Tổng quan&lt;/h2&gt;
+&lt;p&gt;Java là ngôn ngữ lập trình hướng đối tượng, kiểu tĩnh. Nó cũng độc lập với nền tảng — chương trình Java có thể được viết và biên dịch trên một loại máy, chẳng hạn như hệ thống Windows, và được thực thi trên một loại máy khác, chẳng hạn như MacOS, mà không cần bất kỳ sửa đổi nào đối với mã nguồn.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

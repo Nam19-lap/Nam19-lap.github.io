@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interface trong Java – Đa hình và Kế thừa đa cấp | Nam.Dev</title>
+    <link rel="stylesheet" href="/css/custom.css">
+    <script defer src="/js/main.js"></script>
+  </head>
+  <body>
+    <header class="navbar">
+  <div class="container">
+    <a href="/" class="logo">Nam.Dev</a>
+    <nav>
+      <a href="/">Trang chủ</a>
+      <a href="/posts/">Bài viết</a>
+      <a href="/about/">Giới thiệu</a>
+      <button id="mode-toggle" class="mode-btn">☀️</button>
+    </nav>
+  </div>
+</header>
+
+    <main class="container">
+      
+<article class="post-content fade-up">
+  
+  <h1>Interface trong Java – Đa hình và Kế thừa đa cấp</h1>
+  <p class="post-date">🗓️ 29/10/2025</p>
+
+  
+  
+
+  
+  <div class="post-body">
+    <h2 id="1-tổng-quan">1. Tổng quan</h2>
+<p>Trong bài viết này, chúng ta sẽ cùng tìm hiểu <strong>Interface trong Java</strong>, cách mà Java sử dụng chúng để <strong>thực hiện đa hình (polymorphism)</strong> và <strong>kế thừa đa cấp (multiple inheritance)</strong>.</p>
+<hr>
+<h2 id="2-interface-trong-java-là-gì">2. Interface trong Java là gì?</h2>
+<p>Trong Java, <strong>interface</strong> là một kiểu trừu tượng (abstract type) chứa tập hợp các <strong>phương thức (methods)</strong> và <strong>hằng số (constants)</strong>.<br>
+Interface là một trong những khái niệm cốt lõi giúp Java đạt được <strong>tính trừu tượng</strong>, <strong>đa hình</strong> và <strong>kế thừa đa cấp</strong>.</p>
+<p>Ví dụ đơn giản:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Electronic</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Biến hằng</span>
+</span></span><span style="display:flex;"><span>    String LED <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;LED&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Phương thức trừu tượng</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getElectricityUse</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Phương thức static</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isEnergyEfficient</span>(String electronicType) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> electronicType.<span style="color:#a6e22e">equals</span>(LED);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Phương thức mặc định (default)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printDescription</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Electronic Description&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Chúng ta có thể triển khai interface này trong một lớp bằng từ khóa implements:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Computer</span> <span style="color:#66d9ef">implements</span> Electronic {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getElectricityUse</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> 1000;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="21-quy-tắc-khi-tạo-interface">2.1. Quy tắc khi tạo Interface</h2>
+<p>Trong interface, chúng ta có thể sử dụng:</p>
+<ul>
+<li>
+<p>Biến hằng (constant variables)</p>
+</li>
+<li>
+<p>Phương thức trừu tượng (abstract methods)</p>
+</li>
+<li>
+<p>Phương thức tĩnh (static methods)</p>
+</li>
+<li>
+<p>Phương thức mặc định (default methods)</p>
+</li>
+</ul>
+<p>Một số quy tắc quan trọng:</p>
+<ul>
+<li>
+<p>Không thể khởi tạo interface trực tiếp.</p>
+</li>
+<li>
+<p>Interface có thể rỗng, không chứa phương thức nào.</p>
+</li>
+<li>
+<p>Không thể dùng từ khóa final cho interface.</p>
+</li>
+<li>
+<p>Phương thức trong interface mặc định là public abstract.</p>
+</li>
+<li>
+<p>Biến trong interface luôn là public static final.</p>
+</li>
+<li>
+<p>Từ Java 9 trở đi, có thể định nghĩa phương thức private trong interface.</p>
+</li>
+</ul>
+<h2 id="3-lợi-ích-của-interface">3. Lợi ích của Interface</h2>
+<h2 id="31-cung-cấp-hành-vi-chung-behavioral-functionality">31. Cung cấp hành vi chung (Behavioral Functionality)</h2>
+<p>Interface giúp chúng ta thêm hành vi có thể dùng lại giữa các lớp không liên quan.
+Ví dụ: Comparable, Comparator, và Cloneable là các interface phổ biến trong Java.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Employee</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">double</span> salary;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">getSalary</span>() { <span style="color:#66d9ef">return</span> salary; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setSalary</span>(<span style="color:#66d9ef">double</span> salary) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">salary</span> <span style="color:#f92672">=</span> salary; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmployeeSalaryComparator</span> <span style="color:#66d9ef">implements</span> Comparator<span style="color:#f92672">&lt;</span>Employee<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span>(Employee a, Employee b) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Double.<span style="color:#a6e22e">compare</span>(a.<span style="color:#a6e22e">getSalary</span>(), b.<span style="color:#a6e22e">getSalary</span>());
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="32-kế-thừa-đa-cấp-multiple-inheritance">3.2. Kế thừa đa cấp (Multiple Inheritance)</h2>
+<p>Java không cho phép kế thừa nhiều lớp, nhưng có thể kế thừa nhiều interface.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Transform</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">transform</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Fly</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fly</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span> <span style="color:#66d9ef">implements</span> Fly, Transform {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fly</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;I can Fly!!&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">transform</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;I can Transform!!&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Ở ví dụ trên, Car kế thừa hai interface và thực thi cả hai phương thức fly() và transform().</p>
+<h2 id="33-đa-hình-polymorphism">3.3. Đa hình (Polymorphism)</h2>
+<p>Đa hình cho phép đối tượng có thể thể hiện dưới nhiều hình dạng khác nhau tại runtime.
+Trong Java, interface là công cụ mạnh để thực hiện điều này.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Shape</span> {
+</span></span><span style="display:flex;"><span>    String <span style="color:#a6e22e">name</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Circle</span> <span style="color:#66d9ef">implements</span> Shape {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">name</span>() { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Circle&#34;</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Square</span> <span style="color:#66d9ef">implements</span> Shape {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">name</span>() { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Square&#34;</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Shape<span style="color:#f92672">&gt;</span> shapes <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>shapes.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> Circle());
+</span></span><span style="display:flex;"><span>shapes.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> Square());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Shape shape : shapes) {
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(shape.<span style="color:#a6e22e">name</span>());
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Kết quả:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#f92672">Circle</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Square</span>
+</span></span></code></pre></div><h2 id="4-phương-thức-mặc-định-trong-interface">4. Phương thức mặc định trong Interface</h2>
+<p>Trước Java 8, nếu bạn thêm một phương thức mới vào interface thì tất cả các lớp cũ phải override nó — gây lỗi tương thích ngược.</p>
+<p>Từ Java 8, có thể thêm default method để tránh điều này:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Printer</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">info</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Default Printer Info&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="5-quy-tắc-kế-thừa-interface">5. Quy tắc kế thừa Interface</h2>
+<h2 id="51-interface-kế-thừa-interface-khác">5.1. Interface kế thừa Interface khác</h2>
+<p>Một interface có thể mở rộng (extends) interface khác:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">HasColor</span> {
+</span></span><span style="display:flex;"><span>    String <span style="color:#a6e22e">getColor</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Box</span> <span style="color:#66d9ef">extends</span> HasColor {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getHeight</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>→ Box kế thừa HasColor, nên có cả hai phương thức getColor() và getHeight().</p>
+<h2 id="52-abstract-class-triển-khai-interface">5.2. Abstract Class triển khai Interface</h2>
+<p>Khi một abstract class triển khai interface, nó kế thừa toàn bộ phương thức trừu tượng và mặc định của interface đó.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Transform</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">transform</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printSpecs</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Transform Specification&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Vehicle</span> <span style="color:#66d9ef">implements</span> Transform {}
+</span></span></code></pre></div><p>Vehicle kế thừa cả phương thức transform() (abstract) và printSpecs() (default).</p>
+<h2 id="6-functional-interface">6. Functional Interface</h2>
+<p>Functional Interface là interface chỉ có một phương thức trừu tượng duy nhất.
+Từ Java 8, các functional interface được sử dụng phổ biến với lambda expressions.</p>
+<p>Một số ví dụ phổ biến:</p>
+<ul>
+<li>
+<p>Runnable</p>
+</li>
+<li>
+<p>Callable</p>
+</li>
+<li>
+<p>Predicate<T></p>
+</li>
+<li>
+<p>Consumer<T></p>
+</li>
+<li>
+<p>Function&lt;T, R&gt;</p>
+</li>
+</ul>
+<p>Ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@FunctionalInterface</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Greeting</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sayHello</span>(String name);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Greeting greet <span style="color:#f92672">=</span> name <span style="color:#f92672">-&gt;</span> System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Xin chào, &#34;</span> <span style="color:#f92672">+</span> name);
+</span></span><span style="display:flex;"><span>greet.<span style="color:#a6e22e">sayHello</span>(<span style="color:#e6db74">&#34;Java!&#34;</span>);
+</span></span></code></pre></div><h2 id="7-kết-luận">7. Kết luận</h2>
+<p>Qua bài viết này, chúng ta đã hiểu:</p>
+<ul>
+<li>Interface là công cụ để đạt được tính trừu tượng, đa hình và kế thừa đa cấp</li>
+<li>Có thể chứa phương thức abstract, static, default</li>
+<li>Giúp viết code linh hoạt, dễ mở rộng, dễ bảo trì</li>
+</ul>
+<p>📚 Mã nguồn minh họa bài viết có thể được tham khảo trên GitHub hoặc qua dự án thực hành cá nhân của bạn.</p>
+
+  </div>
+</article>
+
+    </main>
+    <footer class="footer">
+  <p>© 2025 Nam.Dev — Chia sẻ kiến thức lập trình 💻</p>
+  <p>
+    📧 <a href="mailto:nam.dev@example.com">Liên hệ</a> |
+    <a href="https://github.com/Nam19-lap" target="_blank">GitHub</a> |
+    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+  </p>
+</footer>
+
+  </body>
+</html>

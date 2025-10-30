@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DOM on Blog của Nam</title>
+    <link>http://localhost:1313/tags/dom/</link>
+    <description>Recent content in DOM on Blog của Nam</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Mon, 13 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/dom/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DOM và Event trong JavaScript</title>
+      <link>http://localhost:1313/posts/js-dom-event/</link>
+      <pubDate>Mon, 13 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/js-dom-event/</guid>
+      <description>&lt;h2 id=&#34;-dom-document-object-model&#34;&gt;🌳 DOM (Document Object Model)&lt;/h2&gt;&#xA;&lt;p&gt;DOM là mô hình biểu diễn &lt;strong&gt;cấu trúc HTML&lt;/strong&gt; dưới dạng cây.&lt;br&gt;&#xA;Bạn có thể dùng JS để &lt;strong&gt;thay đổi nội dung, thuộc tính, hoặc style&lt;/strong&gt; của trang.&lt;/p&gt;&#xA;&lt;p&gt;Ví dụ:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;document.&lt;span style=&#34;color:#a6e22e&#34;&gt;getElementById&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;demo&amp;#34;&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;innerText&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello JS!&amp;#34;&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

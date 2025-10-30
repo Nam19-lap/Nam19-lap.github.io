@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java OOP – Lớp (Class) và Đối tượng (Object) | Nam.Dev</title>
+    <link rel="stylesheet" href="/css/custom.css">
+    <script defer src="/js/main.js"></script>
+  </head>
+  <body>
+    <header class="navbar">
+  <div class="container">
+    <a href="/" class="logo">Nam.Dev</a>
+    <nav>
+      <a href="/">Trang chủ</a>
+      <a href="/posts/">Bài viết</a>
+      <a href="/about/">Giới thiệu</a>
+      <button id="mode-toggle" class="mode-btn">☀️</button>
+    </nav>
+  </div>
+</header>
+
+    <main class="container">
+      
+<article class="post-content fade-up">
+  
+  <h1>Java OOP – Lớp (Class) và Đối tượng (Object)</h1>
+  <p class="post-date">🗓️ 28/10/2025</p>
+
+  
+  
+
+  
+  <div class="post-body">
+    <h2 id="-1-tổng-quan">🔰 1. Tổng quan</h2>
+<p>Trong lập trình hướng đối tượng (<strong>OOP</strong>), hai khái niệm cơ bản nhất chính là <strong>Lớp (Class)</strong> và <strong>Đối tượng (Object)</strong>.<br>
+Chúng giúp mô hình hóa các thực thể trong thế giới thực dưới dạng lập trình.</p>
+<ul>
+<li><strong>Class</strong>: là bản thiết kế (blueprint) hay khuôn mẫu mô tả kiểu dữ liệu, đặc tính, hành vi của một đối tượng.</li>
+<li><strong>Object</strong>: là thực thể cụ thể được tạo ra từ một Class. Mỗi object có <strong>trạng thái (state)</strong> và <strong>hành vi (behavior)</strong> riêng.</li>
+</ul>
+<hr>
+<h2 id="-2-lớp-class-trong-java">🧱 2. Lớp (Class) trong Java</h2>
+<p>Một <strong>Class</strong> trong Java có thể chứa:</p>
+<ul>
+<li><strong>Trường (fields)</strong> → lưu trữ dữ liệu (trạng thái)</li>
+<li><strong>Hàm tạo (constructor)</strong> → khởi tạo đối tượng</li>
+<li><strong>Phương thức (methods)</strong> → mô tả hành vi</li>
+</ul>
+<p>Ví dụ, ta tạo một lớp mô tả <strong>ô tô (Car)</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Thuộc tính (fields)</span>
+</span></span><span style="display:flex;"><span>    String type;
+</span></span><span style="display:flex;"><span>    String model;
+</span></span><span style="display:flex;"><span>    String color;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> speed;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Hàm tạo (constructor)</span>
+</span></span><span style="display:flex;"><span>    Car(String type, String model, String color) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> type;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">model</span> <span style="color:#f92672">=</span> model;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Phương thức (method)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">increaseSpeed</span>(<span style="color:#66d9ef">int</span> increment) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">speed</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">speed</span> <span style="color:#f92672">+</span> increment;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">speed</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Lớp trên định nghĩa cách mô tả một chiếc xe hơi.
+Khi ta tạo đối tượng từ class, ta đang tạo ra một “phiên bản cụ thể” của chiếc xe đó.</p>
+<h2 id="-hàm-tạo-mặc-định-default-constructor">⚙️ Hàm tạo mặc định (Default Constructor)</h2>
+<p>Mỗi lớp Java đều có một constructor mặc định nếu ta không tự định nghĩa:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Car() { }
+</span></span></code></pre></div><p>Constructor mặc định này gán các giá trị mặc định (chuỗi → null, số → 0).</p>
+<p>Nếu ta muốn các đối tượng có giá trị khởi tạo riêng, ta định nghĩa constructor như sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Car(String type, String model) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> type;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">model</span> <span style="color:#f92672">=</span> model;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="3-đối-tượng-object">3. Đối tượng (Object)</h2>
+<p>Khi chương trình chạy (runtime), ta tạo đối tượng từ class bằng từ khóa new:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Car focus <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Car(<span style="color:#e6db74">&#34;Ford&#34;</span>, <span style="color:#e6db74">&#34;Focus&#34;</span>, <span style="color:#e6db74">&#34;red&#34;</span>);
+</span></span><span style="display:flex;"><span>Car auris <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Car(<span style="color:#e6db74">&#34;Toyota&#34;</span>, <span style="color:#e6db74">&#34;Auris&#34;</span>, <span style="color:#e6db74">&#34;blue&#34;</span>);
+</span></span><span style="display:flex;"><span>Car golf <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Car(<span style="color:#e6db74">&#34;Volkswagen&#34;</span>, <span style="color:#e6db74">&#34;Golf&#34;</span>, <span style="color:#e6db74">&#34;green&#34;</span>);
+</span></span></code></pre></div><p>Mỗi dòng trên tạo ra một object (xe hơi riêng biệt) dựa trên cùng một bản thiết kế Car.</p>
+<p>Ta có thể thay đổi trạng thái (ví dụ: tốc độ) của từng đối tượng qua phương thức:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>focus.<span style="color:#a6e22e">increaseSpeed</span>(10);
+</span></span><span style="display:flex;"><span>auris.<span style="color:#a6e22e">increaseSpeed</span>(20);
+</span></span><span style="display:flex;"><span>golf.<span style="color:#a6e22e">increaseSpeed</span>(30);
+</span></span></code></pre></div><p>➡️ Giờ đây, ba chiếc xe có tốc độ khác nhau – minh họa cách mỗi object có trạng thái riêng biệt.</p>
+<h2 id="4-phạm-vi-truy-cập-access-modifiers">4. Phạm vi truy cập (Access Modifiers)</h2>
+<p>Trong ví dụ trên, ta chưa định nghĩa <strong>phạm vi truy cập</strong> cho class, field hay method.</p>
+<p>Các <strong>modifier</strong> phổ biến gồm:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Modifier</th>
+          <th>Mức truy cập</th>
+          <th>Ghi chú</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>public</code></td>
+          <td>Truy cập từ mọi nơi</td>
+          <td>Thường dùng cho class, method</td>
+      </tr>
+      <tr>
+          <td><code>private</code></td>
+          <td>Chỉ truy cập trong class</td>
+          <td>Dùng để ẩn dữ liệu nội bộ</td>
+      </tr>
+      <tr>
+          <td><code>protected</code></td>
+          <td>Truy cập trong package và các lớp con</td>
+          <td>Dùng trong kế thừa</td>
+      </tr>
+      <tr>
+          <td><em>(default)</em></td>
+          <td>Truy cập trong cùng package</td>
+          <td>Khi không ghi rõ modifier</td>
+      </tr>
+  </tbody>
+</table>
+<p>Ví dụ class hoàn chỉnh với access modifier:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String type;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String model;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String color;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> speed;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Constructor công khai</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Car</span>(String type, String model, String color) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> type;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">model</span> <span style="color:#f92672">=</span> model;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Getter &amp; Setter</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getColor</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> color;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setColor</span>(String color) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getSpeed</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> speed;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Phương thức tăng tốc</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">increaseSpeed</span>(<span style="color:#66d9ef">int</span> increment) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">speed</span> <span style="color:#f92672">+=</span> increment;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>➡️ Ở đây:</p>
+<ul>
+<li>
+<p>Lớp và constructor là public → có thể tạo object từ mọi nơi.</p>
+</li>
+<li>
+<p>Các field là private → chỉ truy cập thông qua getter/setter.</p>
+</li>
+<li>
+<p>Đây chính là ví dụ của tính đóng gói (Encapsulation) trong OOP.</p>
+</li>
+</ul>
+<h2 id="-5-kết-luận">🧩 5. Kết luận</h2>
+<p>Trong bài này, ta đã tìm hiểu:</p>
+<ul>
+<li>
+<p>Class là khuôn mẫu mô tả dữ liệu &amp; hành vi.</p>
+</li>
+<li>
+<p>Object là thể hiện cụ thể được tạo từ class.</p>
+</li>
+<li>
+<p>Access Modifier giúp bảo vệ và kiểm soát truy cập dữ liệu nội bộ.</p>
+</li>
+</ul>
+<p>💡 Bước tiếp theo:
+Tìm hiểu về Kế thừa (Inheritance), Từ khóa super, và Lớp trừu tượng (Abstract class) — những nền tảng tiếp theo của OOP trong Java.</p>
+<p>✍️ Bài viết thuộc series “Lộ trình học Java cơ bản”</p>
+
+  </div>
+</article>
+
+    </main>
+    <footer class="footer">
+  <p>© 2025 Nam.Dev — Chia sẻ kiến thức lập trình 💻</p>
+  <p>
+    📧 <a href="mailto:nam.dev@example.com">Liên hệ</a> |
+    <a href="https://github.com/Nam19-lap" target="_blank">GitHub</a> |
+    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+  </p>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript cơ bản — Ngôn ngữ của web | Nam.Dev</title>
+    <link rel="stylesheet" href="/css/custom.css">
+    <script defer src="/js/main.js"></script>
+  </head>
+  <body>
+    <header class="navbar">
+  <div class="container">
+    <a href="/" class="logo">Nam.Dev</a>
+    <nav>
+      <a href="/">Trang chủ</a>
+      <a href="/posts/">Bài viết</a>
+      <a href="/about/">Giới thiệu</a>
+      <button id="mode-toggle" class="mode-btn">☀️</button>
+    </nav>
+  </div>
+</header>
+
+    <main class="container">
+      
+<article class="post-content fade-up">
+  
+  <h1>JavaScript cơ bản — Ngôn ngữ của web</h1>
+  <p class="post-date">🗓️ 28/10/2025</p>
+
+  
+  
+
+  
+  <div class="post-body">
+    <p><img alt="Giới thiệu JavaScript" loading="lazy" src="/images/js-intro.jpg"></p>
+<h2 id="-javascript-là-gì">🌐 JavaScript là gì?</h2>
+<p><strong>JavaScript (JS)</strong> là ngôn ngữ lập trình chạy <strong>trên trình duyệt web</strong>, giúp trang web <strong>tương tác, động và thông minh hơn</strong>.</p>
+<p>💬 <strong>HTML</strong> → cấu trúc<br>
+🎨 <strong>CSS</strong> → giao diện<br>
+⚙️ <strong>JavaScript</strong> → hành vi, logic</p>
+<hr>
+<h2 id="-ví-dụ-đầu-tiên">⚡ Ví dụ đầu tiên</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">h2</span>&gt;Xin chào JavaScript!&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sayHello()&#34;</span>&gt;Bấm vào đây&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sayHello</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Chào mừng bạn đến với JavaScript!&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>🧠 Khi người dùng bấm nút → trình duyệt chạy đoạn code JS và hiển thị hộp thoại “Chào mừng bạn”.</p>
+<h2 id="-cách-chèn-javascript">🔍 Cách chèn JavaScript</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Cách</th>
+          <th>Cú pháp</th>
+          <th>Mô tả</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Nội tuyến</strong></td>
+          <td><code>&lt;button onclick=&quot;alert('Hi!')&quot;&gt;Click&lt;/button&gt;</code></td>
+          <td>Gắn trực tiếp vào HTML</td>
+      </tr>
+      <tr>
+          <td><strong>Nội bộ</strong></td>
+          <td><code>&lt;script&gt; ... &lt;/script&gt;</code></td>
+          <td>Viết trong cùng file HTML</td>
+      </tr>
+      <tr>
+          <td><strong>Ngoài file</strong></td>
+          <td><code>&lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;</code></td>
+          <td>Tách riêng file <code>.js</code> cho gọn gàng</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="-biến-và-kiểu-dữ-liệu">🧩 Biến và kiểu dữ liệu</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Khai báo biến
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Nam&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Kiểu dữ liệu phổ biến
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">isStudent</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;          <span style="color:#75715e">// boolean
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">score</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">9.5</span>;               <span style="color:#75715e">// number
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">city</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hà Nội&#34;</span>;           <span style="color:#75715e">// string
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">subjects</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;JS&#34;</span>, <span style="color:#e6db74">&#34;HTML&#34;</span>]; <span style="color:#75715e">// array
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">info</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Nam&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span> }; <span style="color:#75715e">// object
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">age</span>, <span style="color:#a6e22e">city</span>);
+</span></span></code></pre></div><p>📘 Ghi nhớ:</p>
+<ul>
+<li>
+<p>let: có thể thay đổi giá trị</p>
+</li>
+<li>
+<p>const: không thể gán lại</p>
+</li>
+<li>
+<p>var: cú pháp cũ, nên hạn chế dùng</p>
+</li>
+</ul>
+<h2 id="-cấu-trúc-điều-khiển">⚙️ Cấu trúc điều khiển</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">score</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">score</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">9</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Xuất sắc&#34;</span>);
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">score</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">7</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Khá&#34;</span>);
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Cần cố gắng!&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Lần thứ &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">i</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="-hàm-trong-javascript">🔄 Hàm trong JavaScript</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">greet</span>(<span style="color:#a6e22e">name</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Xin chào, &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;!&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">greet</span>(<span style="color:#e6db74">&#34;Nam&#34;</span>));
+</span></span></code></pre></div><p>👉 Ngoài ra còn có hàm mũi tên (arrow function):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">greet</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">name</span>) =&gt; <span style="color:#e6db74">`Xin chào, </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">!`</span>;
+</span></span></code></pre></div><h2 id="-dom--giao-tiếp-với-html">🎯 DOM — Giao tiếp với HTML</h2>
+<p>JavaScript có thể truy cập &amp; thay đổi nội dung HTML qua DOM (Document Object Model).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">h2</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;Xin chào!&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;changeText()&#34;</span>&gt;Đổi chữ&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">changeText</span>() {
+</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;title&#34;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Chào từ JavaScript!&#34;</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div>
+  </div>
+</article>
+
+    </main>
+    <footer class="footer">
+  <p>© 2025 Nam.Dev — Chia sẻ kiến thức lập trình 💻</p>
+  <p>
+    📧 <a href="mailto:nam.dev@example.com">Liên hệ</a> |
+    <a href="https://github.com/Nam19-lap" target="_blank">GitHub</a> |
+    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+  </p>
+</footer>
+
+  </body>
+</html>

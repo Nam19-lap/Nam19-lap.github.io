@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới thiệu Java cơ bản | Nam.Dev</title>
+    <link rel="stylesheet" href="/css/custom.css">
+    <script defer src="/js/main.js"></script>
+  </head>
+  <body>
+    <header class="navbar">
+  <div class="container">
+    <a href="/" class="logo">Nam.Dev</a>
+    <nav>
+      <a href="/">Trang chủ</a>
+      <a href="/posts/">Bài viết</a>
+      <a href="/about/">Giới thiệu</a>
+      <button id="mode-toggle" class="mode-btn">☀️</button>
+    </nav>
+  </div>
+</header>
+
+    <main class="container">
+      
+<article class="post-content fade-up">
+  
+  <h1>Giới thiệu Java cơ bản</h1>
+  <p class="post-date">🗓️ 28/10/2025</p>
+
+  
+  
+
+  
+  <div class="post-body">
+    <p>Giới thiệu về cú pháp cơ bản trong Java</p>
+<h2 id="1-tổng-quan">1. Tổng quan</h2>
+<p>Java là ngôn ngữ lập trình hướng đối tượng, kiểu tĩnh. Nó cũng độc lập với nền tảng — chương trình Java có thể được viết và biên dịch trên một loại máy, chẳng hạn như hệ thống Windows, và được thực thi trên một loại máy khác, chẳng hạn như MacOS, mà không cần bất kỳ sửa đổi nào đối với mã nguồn.</p>
+<p>Trong hướng dẫn này, chúng ta sẽ xem xét và hiểu những điều cơ bản về cú pháp Java.</p>
+<h2 id="2-kiểu-dữ-liệu">2. Kiểu dữ liệu</h2>
+<p>Có hai loại kiểu dữ liệu chính trong Java: kiểu dữ liệu nguyên thủy và kiểu dữ liệu đối tượng/tham chiếu .</p>
+<p>Kiểu dữ liệu nguyên thủy là kiểu dữ liệu cơ bản lưu trữ dữ liệu đơn giản và tạo thành nền tảng cho việc thao tác dữ liệu. Ví dụ, Java có các kiểu dữ liệu nguyên thủy cho các giá trị số nguyên ( int, long,  byte, short ) ,  giá trị dấu phẩy động ( float và double ) ,  giá trị ký tự ( char ) và giá trị logic ( boolean ).</p>
+<p>Mặt khác, kiểu tham chiếu là các đối tượng chứa tham chiếu đến các giá trị và/hoặc các đối tượng khác hoặc đến giá trị đặc biệt null để biểu thị sự vắng mặt của giá trị.</p>
+<p>Lớp String  là một ví dụ điển hình về kiểu tham chiếu. Một thể hiện của lớp, được gọi là đối tượng, biểu diễn một chuỗi ký tự, chẳng hạn như &ldquo;Hello World&rdquo;.</p>
+<h2 id="3-khai-báo-biến-trong-java">3. Khai báo biến trong Java</h2>
+<p>Để khai báo một biến trong Java, chúng ta phải chỉ định tên (còn gọi là định danh) và kiểu dữ liệu của biến đó . Hãy xem một ví dụ đơn giản:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> b;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> c;
+</span></span></code></pre></div><p>Java là ngôn ngữ lập trình <strong>hướng đối tượng (OOP)</strong> được phát triển bởi <strong>Sun Microsystems</strong> (nay thuộc Oracle).<br>
+Nổi tiếng với triết lý:</p>
+<blockquote>
+<p>“Write once, run anywhere.”<br>
+— Viết một lần, chạy mọi nơi.</p></blockquote>
+<p>Java thường được sử dụng để phát triển:</p>
+<ul>
+<li>Ứng dụng web (Spring Boot)</li>
+<li>Ứng dụng Android (Java/Kotlin)</li>
+<li>Hệ thống backend hoặc API lớn</li>
+</ul>
+<hr>
+<h2 id="-ví-dụ-đầu-tiên-hello-world">💡 Ví dụ đầu tiên: <code>Hello World</code></h2>
+<p>Đây là chương trình Java cơ bản nhất:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorld</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Xin chào, Java!&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="-giải-thích">🧠 Giải thích:</h2>
+<p>public class HelloWorld : Khai báo một lớp tên là HelloWorld</p>
+<p>public static void main : Hàm chính nơi chương trình bắt đầu</p>
+<p>System.out.println() : Lệnh in ra màn hình</p>
+<p>Khi chạy, Java sẽ hiển thị:</p>
+<p>nginx
+Sao chép mã
+Xin chào, Java!
+⚙️ Cấu trúc cơ bản trong Java
+Một chương trình Java thường có:</p>
+<p>Lớp (Class) – mô tả đối tượng</p>
+<p>Thuộc tính (Field) – dữ liệu của đối tượng</p>
+<p>Phương thức (Method) – hành vi của đối tượng</p>
+<p>Ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span> {
+</span></span><span style="display:flex;"><span>    String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> age;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">study</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; đang học lập trình Java!&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>        Student s1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Student();
+</span></span><span style="display:flex;"><span>        s1.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Nam&#34;</span>;
+</span></span><span style="display:flex;"><span>        s1.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> 20;
+</span></span><span style="display:flex;"><span>        s1.<span style="color:#a6e22e">study</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Kết quả:</p>
+<pre tabindex="0"><code>Nam đang học lập trình Java!
+</code></pre><p>⚡ Vì sao nên học Java?
+✅ Dễ học, cú pháp rõ ràng, gần gũi với C/C++
+✅ Cộng đồng lớn, nhiều tài nguyên học tập
+✅ Dễ chuyển sang Android hoặc Spring Boot
+✅ Chạy được đa nền tảng: Windows, Linux, macOS</p>
+<h2 id="-kết-luận">🧩 Kết luận</h2>
+<p>Java vẫn là một trong những ngôn ngữ lập trình mạnh mẽ, bền vững và đáng học nhất cho người mới bắt đầu.
+Nếu bạn muốn hiểu sâu hơn về luồng (Thread), OOP nâng cao, hoặc cấu trúc dữ liệu, hãy theo dõi các bài tiếp theo trong series Java Core.</p>
+
+  </div>
+</article>
+
+    </main>
+    <footer class="footer">
+  <p>© 2025 Nam.Dev — Chia sẻ kiến thức lập trình 💻</p>
+  <p>
+    📧 <a href="mailto:nam.dev@example.com">Liên hệ</a> |
+    <a href="https://github.com/Nam19-lap" target="_blank">GitHub</a> |
+    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+  </p>
+</footer>
+
+  </body>
+</html>
